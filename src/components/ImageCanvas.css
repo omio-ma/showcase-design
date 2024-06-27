@@ -1,0 +1,17 @@
+.image-container {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}

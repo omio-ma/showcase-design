@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import { ImageCanvas } from "./components/ImageCanvas";
 
 function App() {
   const handleMouseMove = (
@@ -20,28 +21,18 @@ function App() {
 
   return (
     <div className="container">
-      <div
-        className="image-container"
-        onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-        onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1715835441810-38bcd2756da6?q=80&w=2666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Left"
-          className="image"
-        />
-      </div>
-      <div
-        className="image-container"
-        onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-        onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1608609530003-8343fc69c2f6?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Right"
-          className="image"
-        />
-      </div>
+      <ImageCanvas
+        altText="Left"
+        handleMouseLeave={handleMouseLeave}
+        handleMouseMove={handleMouseMove}
+        imageSource="https://images.unsplash.com/photo-1715835441810-38bcd2756da6?q=80&w=2666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+      <ImageCanvas
+        altText="Right"
+        handleMouseLeave={handleMouseLeave}
+        handleMouseMove={handleMouseMove}
+        imageSource="https://images.unsplash.com/photo-1608609530003-8343fc69c2f6?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
     </div>
   );
 }
